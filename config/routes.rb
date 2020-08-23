@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :links, only: :index
-  root "links#index"
+  resources :categories, only: :index
+  root "categories#index"
 end
