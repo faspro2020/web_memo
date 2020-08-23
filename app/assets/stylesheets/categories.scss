@@ -13,21 +13,13 @@
     &__area {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       &__left {
 
       }
 
       &__right {
-        width: 300px;
-        display: flex;
-        justify-content: space-around;
-        &__destory {
-
-        }
-        &__edit {
-
-        }
+        width: 100px;
+        text-align: center;
       }   
     }
 
