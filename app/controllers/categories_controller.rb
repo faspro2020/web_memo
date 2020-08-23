@@ -1,5 +1,16 @@
 class CategoriesController < ApplicationController
   def index
-    @category = Category.all
+    @categories = Category.all
+  end
+
+  def create
+    Category.create(category_params)
+    redirect_to :root
+  end
+
+  private
+
+  def category_params
+    params.permit(:name, :comment)
   end
 end
