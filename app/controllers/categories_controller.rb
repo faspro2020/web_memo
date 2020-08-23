@@ -1,12 +1,19 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:index]
-
   def index
+    @categories = Category.all
   end
 
   def create
-    Category.create(category_params)
-    redirect_to :root
+    @category = Category.create(category_params)
+    if @category.save
+      redirect_to :root
+    end
+  end
+
+  def show
+    @category = Category.find(params[:id])
+    @links = Link.all
+    @link = @category.links.new(params[:category_id])
   end
 
   def destroy
@@ -20,9 +27,5 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.permit(:name, :comment)
-  end
-
-  def set_category
-    @categories = Category.all
   end
 end
