@@ -6,7 +6,7 @@
           .Category__content__area__left
             = link_to ca.name, "#"
           .Category__content__area__right
-            削除
+            = link_to "削除", category_path(ca.id), method: :delete
         .Category__content__comment
           ＜コメント＞
           %br
@@ -17,4 +17,4 @@
     .Form__content
       = f.text_field :name, placeholder: "カテゴリを入力してください", class: "Form__area"
       = f.text_field :comment, placeholder: "コメントを入力してください", class: "Form__area"
-    = f.submit "URLを追加", class: "Form__btn"
+    = f.submit "カテゴリ追加", class: "Form__btn"
